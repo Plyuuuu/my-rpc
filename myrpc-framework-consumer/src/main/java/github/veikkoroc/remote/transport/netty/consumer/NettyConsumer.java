@@ -56,8 +56,8 @@ public class NettyConsumer {
                 .handler(new ChannelInitializer<SocketChannel>() {
                     @Override
                     protected void initChannel(SocketChannel channel) throws Exception {
-                        // 如果15秒钟内没有数据发送到服务器，则发送心跳请求
-                        channel.pipeline().addLast(new IdleStateHandler(0,5,0, TimeUnit.SECONDS));
+                        // 如果30秒钟内没有数据发送到服务器，则发送心跳请求
+                        channel.pipeline().addLast(new IdleStateHandler(0,30,0, TimeUnit.SECONDS));
                         // 配置自定义序列化编解码器
                         channel.pipeline().addLast(new KryoEncoder(kryoSerializer, RpcRequest.class));
                         channel.pipeline().addLast(new KryoDecoder(kryoSerializer, RpcResponse.class));

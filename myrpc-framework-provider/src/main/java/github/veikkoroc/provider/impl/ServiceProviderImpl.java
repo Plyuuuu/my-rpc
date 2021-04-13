@@ -54,6 +54,7 @@ public class ServiceProviderImpl implements ServiceProvider {
      */
     @Override
     public void addService(Object service, Class<?> serviceClass, RpcServiceProperties rpcServiceProperties) {
+        log.info("====> 当前本地的服务 serviceMap:[{}]",serviceMap);
         log.info("----> 把服务:[{}]添加到本地 serviceMap:[{}]",service,serviceMap);
         // rpcServiceName : this.getServiceName()+this.getGroup()+this.getVersion()
         String rpcServiceName = rpcServiceProperties.getRpcServicePropertiesFields();
@@ -65,7 +66,7 @@ public class ServiceProviderImpl implements ServiceProvider {
         // 服务还没有注册,添加到map缓存和set
         registeredService.add(rpcServiceName);
         serviceMap.put(rpcServiceName, service);
-        log.info("<---- 服务添加到本地成功 serviceMap:[{}] \n registeredService:[{}]",serviceMap,registeredService);
+        log.info("<---- 服务添加到本地成功 \n serviceMap:[{}] \n registeredService:[{}]",serviceMap,registeredService);
     }
 
     /**
