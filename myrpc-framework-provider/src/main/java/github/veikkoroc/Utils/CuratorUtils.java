@@ -75,9 +75,9 @@ public class CuratorUtils {
             } else {
                 // 如: /my-rpc/github.veikkoroc.OrderService/127.0.0.1:9998
                 zkClient.create().creatingParentsIfNeeded().withMode(CreateMode.PERSISTENT).forPath(path);
+                log.info("<---- 在 zk 上创建永久节点成功 path:[{}]",path);
             }
             REGISTERED_PATH_SET.add(path);
-            log.info("<---- 在 zk 上创建永久节点成功 path:[{}]",path);
             log.info("====> 注册路径集合 REGISTERED_PATH_SET:[{}]",REGISTERED_PATH_SET.toString());
         } catch (Exception e) {
             log.info("<---- 在 zk 上创建永久节点出错:error[{}]",e.getMessage());
@@ -122,7 +122,7 @@ public class CuratorUtils {
     public static void clearRegistry(CuratorFramework zkClient) {
         REGISTERED_PATH_SET.stream().parallel().forEach(p -> {
             try {
-                log.info("----> 开始清空 zk 上残留数据...");
+                log.info("----> 开始清空 zk 上残留数据参数p:[{}]...",p);
                 zkClient.delete().forPath(p);
                 log.info("<---- 清空 zk 上的数据成功");
             } catch (Exception e) {

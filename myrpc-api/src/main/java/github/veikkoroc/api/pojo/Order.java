@@ -18,7 +18,7 @@ public class Order {
     /**
      * 订单编号
      */
-    private int id;
+    private String id;
 
     /**
      * 订单主人名字

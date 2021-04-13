@@ -39,7 +39,6 @@ public class NettyConsumer {
     /**
      * 初始化资源
      */
-
     public NettyConsumer() {
         start();
     }
@@ -52,14 +51,14 @@ public class NettyConsumer {
         bootstrap.group(eventLoopGroup)
                 .channel(NioSocketChannel.class)
                 .handler(new LoggingHandler(LogLevel.INFO))
-                //连接超时时间
+                // 连接超时时间
                 .option(ChannelOption.CONNECT_TIMEOUT_MILLIS,5000)
                 .handler(new ChannelInitializer<SocketChannel>() {
                     @Override
                     protected void initChannel(SocketChannel channel) throws Exception {
-                        //如果15秒钟内没有数据发送到服务器，则发送心跳请求
+                        // 如果15秒钟内没有数据发送到服务器，则发送心跳请求
                         channel.pipeline().addLast(new IdleStateHandler(0,5,0, TimeUnit.SECONDS));
-                        //配置自定义序列化编解码器
+                        // 配置自定义序列化编解码器
                         channel.pipeline().addLast(new KryoEncoder(kryoSerializer, RpcRequest.class));
                         channel.pipeline().addLast(new KryoDecoder(kryoSerializer, RpcResponse.class));
                         channel.pipeline().addLast(new NettyConsumerHandler());

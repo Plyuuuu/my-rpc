@@ -7,9 +7,9 @@ package github.veikkoroc.Utils;
  */
 public class Constants {
     /**
-     * 服务提供者的端口
+     * 服务提供者的默认端口
      */
-    public static final Integer PROVIDER_PORT = 9998;
+    public static Integer PROVIDER_PORT = 9996;
     /**
      * zk 上服务的根路径
      */
@@ -19,4 +19,12 @@ public class Constants {
      * zk 默认的套接字
      */
     public static final String DEFAULT_ZOOKEEPER_SOCKET = "127.0.0.1:2181";
+
+    /**
+     * 设置服务的端口
+     * @param port
+     */
+    public static void setServicePort(Integer port){
+        Constants.PROVIDER_PORT = port;
+    }
 }

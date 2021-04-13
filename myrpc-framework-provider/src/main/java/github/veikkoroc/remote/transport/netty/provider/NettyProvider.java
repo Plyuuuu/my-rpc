@@ -44,12 +44,11 @@ public class NettyProvider implements InitializingBean {
      */
     private final KryoSerializer kryoSerializer = new KryoSerializer();
     /**
-     * Provider 的端口 9998
+     * Provider 的默认端口 9996
      */
-    public static final int port = Constants.PROVIDER_PORT;
+    private static int port = Constants.PROVIDER_PORT;
     /**
      * Provider 的 ip
-     *
      */
     public static String host;
 
@@ -125,6 +124,7 @@ public class NettyProvider implements InitializingBean {
             log.info("<---- 关闭 workerGroup、bossGroup 完成");
         }
     }
+
 
     /**
      * InitializingBean接口为bean提供了初始化方法的方式，它只包括afterPropertiesSet方法，
