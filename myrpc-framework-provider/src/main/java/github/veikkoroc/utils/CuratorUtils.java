@@ -1,4 +1,4 @@
-package github.veikkoroc.Utils;
+package github.veikkoroc.utils;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.curator.RetryPolicy;

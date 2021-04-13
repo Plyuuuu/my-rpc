@@ -1,4 +1,4 @@
-package github.veikkoroc.Utils;
+package github.veikkoroc.utils;
 
 import lombok.Getter;
 import lombok.Setter;

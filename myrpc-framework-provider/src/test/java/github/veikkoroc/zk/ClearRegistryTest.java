@@ -1,6 +1,6 @@
 package github.veikkoroc.zk;
 
-import github.veikkoroc.Utils.CuratorUtils;
+import github.veikkoroc.utils.CuratorUtils;
 
 /**
  * @author Veikko Roc

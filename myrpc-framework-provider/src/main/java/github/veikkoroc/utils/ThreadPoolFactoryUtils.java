@@ -1,4 +1,4 @@
-package github.veikkoroc.Utils;
+package github.veikkoroc.utils;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import lombok.extern.slf4j.Slf4j;

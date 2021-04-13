@@ -1,4 +1,4 @@
-package github.veikkoroc.Utils;
+package github.veikkoroc.utils;
 
 /**
  * @author Veikko Roc

@@ -1,6 +1,6 @@
 package github.veikkoroc.remote.transport.netty.provider;
 
-import github.veikkoroc.Utils.Constants;
+import github.veikkoroc.utils.Constants;
 import github.veikkoroc.config.CustomShutdownHook;
 import github.veikkoroc.factory.SingletonFactory;
 import github.veikkoroc.provider.ServiceProvider;

@@ -1,7 +1,7 @@
 package github.veikkoroc.config;
 
-import github.veikkoroc.Utils.CuratorUtils;
-import github.veikkoroc.Utils.ThreadPoolFactoryUtils;
+import github.veikkoroc.utils.CuratorUtils;
+import github.veikkoroc.utils.ThreadPoolFactoryUtils;
 import lombok.extern.slf4j.Slf4j;
 
 import java.net.InetAddress;

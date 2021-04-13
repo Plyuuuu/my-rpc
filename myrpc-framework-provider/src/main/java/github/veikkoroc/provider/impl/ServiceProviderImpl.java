@@ -1,6 +1,6 @@
 package github.veikkoroc.provider.impl;
 
-import github.veikkoroc.Utils.Constants;
+import github.veikkoroc.utils.Constants;
 import github.veikkoroc.provider.ServiceProvider;
 import github.veikkoroc.registry.ServiceRegister;
 import github.veikkoroc.registry.impl.ZkServiceRegisterImpl;

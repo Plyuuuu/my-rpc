@@ -1,6 +1,6 @@
 package github.veikkoroc.registry.impl;
 
-import github.veikkoroc.Utils.CuratorUtils;
+import github.veikkoroc.utils.CuratorUtils;
 import github.veikkoroc.registry.ServiceRegister;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.curator.framework.CuratorFramework;
