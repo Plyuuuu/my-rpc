@@ -1,19 +1,16 @@
-package github.veikkoroc;
+package github.veikkoroc.performance;
 
 import github.veikkoroc.api.service.OrderSer;
 import github.veikkoroc.proxy.RpcConsumerProxy;
 import github.veikkoroc.remote.entity.RpcServiceProperties;
 import github.veikkoroc.remote.transport.netty.consumer.NettyConsumerTransport;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * @author Veikko Roc
  * @version 1.0
- * @date 2021/4/13 14:22
+ * @date 2021/4/29 11:20
  */
-public class StartConsumerAdd {
+public class DeleteTest {
     public static void main(String[] args) {
         // 获取 rpc 调用请求数据传输对象
         NettyConsumerTransport nettyConsumerTransport = new NettyConsumerTransport();
@@ -22,13 +19,11 @@ public class StartConsumerAdd {
         // 获得代理对象
         RpcConsumerProxy rpcConsumerProxy = new RpcConsumerProxy(nettyConsumerTransport, rpcServiceProperties);
         OrderSer orderSer = rpcConsumerProxy.getProxy(OrderSer.class);
-        // 执行添加方法
-        Map<String,String> order = new HashMap<>(8);
-        order.put("id","2");
-        order.put("userName","李四");
-        order.put("time","2021-04-13");
-        order.put("productName","HUAWEI Mate50");
-        Integer res = orderSer.addOrder(order);
-        System.err.println("====> 添加操作数据库影响行数:"+res);
+        // 执行删除方法
+        long start = System.currentTimeMillis();
+        Integer res = orderSer.delOrder("2");
+        long end = System.currentTimeMillis();
+        System.err.println("执行时间: "+(end-start));
+        System.err.println("====> 删除操作数据库影响行数:"+res);
     }
 }

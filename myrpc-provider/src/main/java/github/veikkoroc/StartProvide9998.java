@@ -1,6 +1,6 @@
 package github.veikkoroc;
 
-import github.veikkoroc.Utils.Constants;
+import github.veikkoroc.utils.Constants;
 import github.veikkoroc.remote.entity.RpcServiceProperties;
 import github.veikkoroc.remote.transport.netty.provider.NettyProvider;
 import github.veikkoroc.service.OrderSerImpl;

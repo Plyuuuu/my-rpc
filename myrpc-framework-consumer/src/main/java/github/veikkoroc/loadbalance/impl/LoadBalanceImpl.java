@@ -24,7 +24,7 @@ public class LoadBalanceImpl implements LoadBalance {
             log.info("<---- 只有一个服务地址");
             return serviceAddresses.get(0);
         }
-        //如果有多台服务器的话，随机找一个
+        // 如果有多台服务器的话，随机找一个
         log.info("<---- 含有多个服务地址");
         return doSelect(serviceAddresses);
     }

@@ -35,7 +35,6 @@ public class NettyConsumer {
      * 事件线程组
      */
     EventLoopGroup eventLoopGroup;
-
     /**
      * 初始化资源
      */
@@ -88,6 +87,5 @@ public class NettyConsumer {
         ChannelFuture future = bootstrap.connect(inetSocketAddress).sync();
         log.info("<---- 服务消费者连接成功,获取通道:[{}]",future.channel());
         return future.channel();
-
     }
 }
